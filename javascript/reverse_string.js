@@ -1,5 +1,10 @@
 function reverseString(str) {
-  // type your code here
+  let len = str.length
+  if (len < 2){
+    return str
+  } else {
+    return str[len-1]+reverseString(str.slice(1,len-1))+str[0]
+  }
 }
 
 if (require.main === module) {
@@ -11,6 +16,8 @@ if (require.main === module) {
 
   console.log("Expecting: 'ybabtac'");
   console.log("=>", reverseString('catbaby'));
+  console.log("Expecting: 'Hello this is a reversal function done recursively test input'");
+  console.log("=>", reverseString('Hello this is a reversal function done recursively test input'))
 }
 
 module.exports = reverseString;
